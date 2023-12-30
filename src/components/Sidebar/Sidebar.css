@@ -1,0 +1,13 @@
+input:checked {
+  background-color: #ffcc00 !important;
+  color: black !important;
+}
+
+.header-style {
+  background-color: #ffcc00 !important;
+  color: black !important;
+}
+
+.bg {
+  background-color: rgb(48, 48, 48) !important;
+}
