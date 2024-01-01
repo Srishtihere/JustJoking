@@ -1,6 +1,33 @@
-# Getting Started with Create React App
+<p align="center">
+  <img style="border-width: 0" width="400" height="400" src="./src/assets/logo.png" alt="Game Star logo">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JustJoking
+
+JustJoking: Your Daily Dose of Digital Chuckles 🤣
+
+---
+
+## Screenshots
+
+### Mobile Device:
+
+<img src="./src/assets/screenshots/mobile_view.png" height='500px'>
+
+### Laptop Device:
+
+<img src="./src/assets/screenshots/desktop_view.png" height='500px'>
+
+## Tech/ Framework Used
+
+## Technologies Used
+
+- ReactJS
+- ReactStrap
+- Bootstrap
+- React Toastify
+- Axios
+- Joke API
 
 ## Available Scripts
 
