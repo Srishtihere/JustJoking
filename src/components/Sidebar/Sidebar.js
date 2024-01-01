@@ -7,6 +7,9 @@ import {
   ListGroup,
   ListGroupItem,
   Input,
+  CardGroup,
+  Row,
+  Col,
 } from "reactstrap";
 
 const customCategory = [
@@ -71,10 +74,10 @@ export default function Sidebar({ getJokeType, getJokeCategory, getJokeQty }) {
     }
   };
   return (
-    <>
-      <CardColumns className="bg w-25 d-flex flex-column justify-content-center align-items-center">
+    <Row className="bg h-auto flex-start" noGutters>
+      <Col md="4" className="d-flex justify-content-center align-items-center">
         <Card
-          className="my-auto"
+          className="my-2"
           style={{
             width: "75%",
           }}
@@ -99,8 +102,10 @@ export default function Sidebar({ getJokeType, getJokeCategory, getJokeQty }) {
             <option>10</option>
           </Input>
         </Card>
+      </Col>
+      <Col md="4" className="d-flex justify-content-center align-items-center">
         <Card
-          className="my-auto"
+          className="my-2"
           style={{
             width: "75%",
           }}
@@ -140,8 +145,10 @@ export default function Sidebar({ getJokeType, getJokeCategory, getJokeQty }) {
             </ListGroupItem>
           </ListGroup>
         </Card>
+      </Col>
+      <Col md="4" className="d-flex justify-content-center align-items-center">
         <Card
-          className="my-auto"
+          className="my-2"
           style={{
             width: "75%",
           }}
@@ -186,7 +193,7 @@ export default function Sidebar({ getJokeType, getJokeCategory, getJokeQty }) {
             )}
           </ListGroup>
         </Card>
-      </CardColumns>
-    </>
+      </Col>
+    </Row>
   );
 }

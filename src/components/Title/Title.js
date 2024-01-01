@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import "./Title.css";
 import {
@@ -48,9 +48,12 @@ function Title({ args, getSearchValue, getLangValue }) {
         return "en";
     }
   }
+  useEffect(() => {
+    console.log(selectedLang);
+  }, [selectedLang]);
 
   const handleLangClick = (item) => {
-    var langValue = getLanguageCode(item);
+    let langValue = getLanguageCode(item);
     getLangValue(langValue);
     setSelectedLang(item);
   };
@@ -58,7 +61,7 @@ function Title({ args, getSearchValue, getLangValue }) {
   return (
     <div>
       <Navbar expand={"md"} {...args} className="bg-dark" dark={true}>
-        <NavbarBrand className="mx-auto fs-3 font-style" href="/">
+        <NavbarBrand className="mx-auto ms-0 md-0 fs-3 font-style" href="/">
           <img
             alt="logo"
             src={logo}
@@ -71,7 +74,10 @@ function Title({ args, getSearchValue, getLangValue }) {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <InputGroup className="mx-auto" style={{ width: "400px" }}>
+          <InputGroup
+            className="mb-1 mx-auto"
+            style={{ maxWidth: "400px", width: "100%" }}
+          >
             <Input
               placeholder="Type keywords"
               onChange={(e) => {
@@ -81,7 +87,7 @@ function Title({ args, getSearchValue, getLangValue }) {
           </InputGroup>
           <Nav navbar className="ms-auto">
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className="dropdown-style" nav caret>
+              <DropdownToggle className="ps-2 dropdown-style" nav caret>
                 {selectedLang}
               </DropdownToggle>
               <DropdownMenu end>

@@ -5,6 +5,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Title from "./components/Title/Title";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { Row, Col } from "reactstrap";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [Type, setType] = useState("single");
@@ -40,21 +42,23 @@ function App() {
   return (
     <div className="App">
       <Title getSearchValue={getSearchValue} getLangValue={getLangValue} />
-      <div className="w-100 h-100 d-flex flex-row flex-wrap">
-        <Sidebar
-          getJokeType={getJokeType}
-          getJokeCategory={getJokeCategory}
-          getJokeQty={getJokeQty}
-        />
-        <JokeBody
-          Type={Type}
-          Qty={Qty}
-          Category={Category}
-          searchValue={searchValue}
-          lang={lang}
-        />
-        <ToastContainer />
-      </div>
+
+      <Sidebar
+        getJokeType={getJokeType}
+        getJokeCategory={getJokeCategory}
+        getJokeQty={getJokeQty}
+      />
+
+      <JokeBody
+        Type={Type}
+        Qty={Qty}
+        Category={Category}
+        searchValue={searchValue}
+        lang={lang}
+      />
+
+      <Footer />
+      <ToastContainer />
     </div>
   );
 }

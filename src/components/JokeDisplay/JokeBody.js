@@ -51,7 +51,7 @@ export default function JokeBody({ Type, Qty, Category, SearchValue, lang }) {
   };
 
   return (
-    <div className="w-75 d-flex flex-column align-items-center">
+    <div className=" d-flex flex-column align-items-center mb-5">
       <div>
         {" "}
         <b>Click here to generate the joke :</b>{" "}
