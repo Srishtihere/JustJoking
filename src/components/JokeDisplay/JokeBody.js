@@ -5,7 +5,7 @@ import { Button, Spinner } from "reactstrap";
 import TwoJokeCard from "./TwoJokeCard";
 import { getJoke } from "../../API/JokeAPI";
 
-export default function JokeBody({ Type, Qty, Category, SearchValue, lang }) {
+export default function JokeBody({ type, qty, category, searchValue, lang }) {
   const [JokeType, setJokeType] = useState("");
   const [SingleJoke, setSingleJoke] = useState("");
   const [TwopartJoke, setTwopartJoke] = useState({
@@ -17,7 +17,7 @@ export default function JokeBody({ Type, Qty, Category, SearchValue, lang }) {
   const [isError, setIsError] = useState(false);
   const handleGenerate = () => {
     setIsLoading(true);
-    getJoke(Type, Category, lang, Qty, SearchValue)
+    getJoke(type, category, lang, qty, searchValue)
       .then((res) => {
         setIsLoading(false);
         setIsError(false);

@@ -80,9 +80,9 @@ function Title({ args, getSearchValue, getLangValue }) {
           >
             <Input
               placeholder="Type keywords"
+              type="text"
               onChange={(e) => {
                 getSearchValue(e.target.value);
-                console.log(e.target.value);
               }}
             />
           </InputGroup>

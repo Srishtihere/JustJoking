@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import JokeBody from "./components/JokeDisplay/JokeBody";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Title from "./components/Title/Title";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { Row, Col } from "reactstrap";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [Type, setType] = useState("single");
-  const [Qty, setQty] = useState(1);
-  const [Category, setCategory] = useState(["Any"]);
+  const [type, setType] = useState("single");
+  const [qty, setQty] = useState(1);
+  const [category, setCategory] = useState(["Any"]);
   const [searchValue, setSearchValue] = useState("");
   const [lang, setLang] = useState("en");
 
@@ -39,6 +38,9 @@ function App() {
     setLang(item);
   };
 
+  useEffect(() => {
+    console.log(searchValue);
+  }, [searchValue]);
   return (
     <div className="App">
       <Title getSearchValue={getSearchValue} getLangValue={getLangValue} />
@@ -50,9 +52,9 @@ function App() {
       />
 
       <JokeBody
-        Type={Type}
-        Qty={Qty}
-        Category={Category}
+        type={type}
+        qty={qty}
+        category={category}
         searchValue={searchValue}
         lang={lang}
       />
