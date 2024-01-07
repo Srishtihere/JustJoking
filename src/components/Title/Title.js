@@ -82,6 +82,7 @@ function Title({ args, getSearchValue, getLangValue }) {
               placeholder="Type keywords"
               onChange={(e) => {
                 getSearchValue(e.target.value);
+                console.log(e.target.value);
               }}
             />
           </InputGroup>
